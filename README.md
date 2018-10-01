@@ -1,0 +1,1 @@
+If you guessed what this folder for,be kind enough to not copy any code from here. Idea is in journey,not destination.
