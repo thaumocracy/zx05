@@ -1,0 +1,30 @@
+const creditValidation = (id) => {
+    let checkstring = String(id);
+    let checksum = 0;
+    let checkMassive = [];
+    let returnString = "base";
+    debugger;
+    if(checkstring.length === 13 || checkstring.length === 15 ||  checkstring.length === 16){
+        for(let i = 1;i < checkstring.length;i += 2){
+          checkMassive.push(String(Number(checkstring[i]) * 2));
+        }
+        for(let i = 0;i < checkstring.length;i += 2){
+            checksum += Number(checkstring[i]);
+          }
+        for(let i = 0;i <  checkMassive.length;i++){
+            for(let j = 0; j < checkMassive[i].length;j++){
+                checksum += Number(checkMassive[i][j]);
+            }
+        }
+        if(checksum % 10 === 0){
+            if(Number(checkstring[0]+checkstring[1]) === 37){
+                returnString = "true";
+            } else if ((Number(checkstring[0]+checkstring[1]) === 34)) {
+                returnString = "false";
+            } 
+        }
+    } else {
+        returnString =  "Card is invalid";
+    }
+    return returnString;
+}
