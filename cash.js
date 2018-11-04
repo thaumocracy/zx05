@@ -1,22 +1,21 @@
 const cash = (cost) => {
-    debugger;
-    let innerCost = Number(cost.toPrecision(2));
+    let innerCost = cost * 100;
 
     let counter = 0;
     while(innerCost > 0){
-        if(innerCost >= 0.25) {
+        if(innerCost >= 25) {
             counter++;
-            innerCost -= 0.25;
-        } else if (innerCost >= 0.10){
+            innerCost -= 25;
+        } else if (innerCost >= 10){
             counter++;
-            innerCost -= 0.10;
-        } else if (innerCost >= 0.05){
+            innerCost -= 10;
+        } else if (innerCost >= 5){
             counter++;
-            innerCost -= 0.05;
-        } else if(innerCost > 0.01){
+            innerCost -= 5;
+        } else if(innerCost > 1){
             counter++;
-            innerCost -= 0.01;
-        } else if(innerCost === 0.01){
+            innerCost -= 1;
+        } else if(innerCost === 1){
             counter++;
             innerCost = 0;
         }
