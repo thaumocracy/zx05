@@ -17,11 +17,19 @@ const creditValidation = (id) => {
             }
         }
         if(checksum % 10 === 0){
-            if(Number(checkstring[0]+checkstring[1]) === 37){
-                returnString = "true";
-            } else if ((Number(checkstring[0]+checkstring[1]) === 34)) {
-                returnString = "false";
-            } 
+            if(checkstring[0]+checkstring[1] === '37' || checkstring[0]+checkstring[1] === '34'){
+                returnString = "Valid American Express";
+            } else if ((checkstring[0]+checkstring[1]) === '51'
+                            || (checkstring[0]+checkstring[1]) === '52'
+                            || (checkstring[0]+checkstring[1]) === '53'
+                            || (checkstring[0]+checkstring[1]) === '54'
+                            || (checkstring[0]+checkstring[1]) === '55'
+              ) {
+                returnString = "Valid MasterCard";
+            } else if(checkstring[0] === '4'){
+                returnString = "Valid Visa";
+            }
+            
         }
     } else {
         returnString =  "Card is invalid";
